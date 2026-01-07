@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | STAR FORCE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">STAR<span>FORCE</span></div>
+  </nav>
+
+  <!-- Login section -->
+  <section class="login-page">
+    <h1>Login to STAR FORCE</h1>
+
+    <!-- Marquiz widget will appear here -->
+    <div id="marquiz-widget"></div>
+  </section>
+
+  <!-- ===== Marquiz Initialize ===== -->
+  <script>
+    (function(w, d, s, o){
+      var j = d.createElement(s); j.async = true; j.src = '//script.marquiz.io/v2.js';
+      j.onload = function() {
+        if (document.readyState !== 'loading') Marquiz.init(o);
+        else document.addEventListener("DOMContentLoaded", function() { Marquiz.init(o); });
+      };
+      d.head.insertBefore(j, d.head.firstElementChild);
+    })(window, document, 'script', {
+        host: '//quiz.marquiz.io',
+        region: 'eu',
+        id: '6958d6a613dcea003443c9a3',  // Your quiz ID
+        containerId: 'marquiz-widget',    // MUST match the div above
+        autoOpen: false,
+        autoOpenFreq: 'once',
+        openOnExit: false,
+        disableOnMobile: false
+    });
+  </script>
+
+  <!-- ===== Marquiz Widget ===== -->
+  <script>
+    (function(t, p) {
+      window.Marquiz 
+        ? Marquiz.add([t, p]) 
+        : document.addEventListener('marquizLoaded', function() { Marquiz.add([t, p]) });
+    })('Widget', {
+      id: '6958d6a613dcea003443c9a3',
+      position: 'right',
+      delay: 10,
+      disableOnMobile: false,
+      disableIfClosed: false,
+      hiddenArrowOnMobile: false,
+      autoOpen: 10
+    });
+  </script>
+
+</body>
+</html>
