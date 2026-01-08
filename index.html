@@ -9,6 +9,31 @@
 
 </head>
 <body>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyCz7l8_uBRaZ3LSQ77tqkznF37RN8RVR18",
+    authDomain: "starforce-web.firebaseapp.com",
+    projectId: "starforce-web",
+    storageBucket: "starforce-web.firebasestorage.app",
+    messagingSenderId: "669497579416",
+    appId: "1:669497579416:web:a69738e278e797e2debded",
+    measurementId: "G-Q9FQ8GZDJ0"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+
+  // Check if user is logged in
+  auth.onAuthStateChanged(user => {
+    if (!user) {
+      // Not logged in, redirect to login page
+      window.location.href = "/login.html"; 
+    }
+  });
+</script>
 
 <!-- NAVBAR -->
 <nav class="navbar">
