@@ -384,3 +384,30 @@ body {
     right: 0;
   }
 }
+/* ================= MOBILE PADDING & SCROLL FIX ================= */
+@media (max-width: 768px) {
+  body, .home, .contact, .reviews, .products-grid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .product-card {
+    padding: 10px;
+  }
+
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  /* Ensure scrollable areas work well */
+  body, html {
+    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+    overflow-y: auto;
+    touch-action: pan-y; /* allows vertical scrolling */
+  }
+
+  .products-grid, .cart-panel {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+  }
+}
