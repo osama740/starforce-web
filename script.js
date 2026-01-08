@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentProduct = null; // Product currently being confirmed
 
   updateCart();
+  
 
   // Toggle cart panel
   cartIcon.addEventListener("click", () => {
@@ -32,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!name || isNaN(price)) return;
 
     currentProduct = { name, price, imgSrc };
-    modalMessage.textContent = `Do you want to purchase "${name}" for $${price}?`;
+    modalMessage.textContent = `Do you want boss to purchase "${name}" for $${price}?`;
     modal.classList.add("active");
   });
 

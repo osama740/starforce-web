@@ -438,3 +438,20 @@ body {
   font-size: 0.9rem;
   color: #6fb24a;
 }
+/* Order button on product card */
+.product-card .order-btn {
+  margin-top: 10px;
+  padding: 8px 14px;
+  background: linear-gradient(135deg, #6fb24a, #9dff6a);
+  color: #0f1a0f;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.product-card .order-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(111,178,74,0.8);
+}
