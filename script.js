@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
   const cartIcon = document.querySelector(".cart-icon");
   const cartPanel = document.getElementById("cart-panel");
   const cartItems = document.getElementById("cart-items");
@@ -10,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const confirmBtn = document.getElementById("confirm-btn");
   const cancelBtn = document.getElementById("cancel-btn");
 
-  // Load cart from localStorage
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   let currentProduct = null; // Product currently being confirmed
 
@@ -29,10 +27,11 @@ document.addEventListener("DOMContentLoaded", () => {
     let name = product.dataset.name || product.querySelector("h3")?.innerText;
     let priceText = product.dataset.price || product.querySelector("p")?.innerText;
     let price = parseFloat(priceText.replace("$", ""));
+    let imgSrc = product.querySelector("img")?.src || "";
+
     if (!name || isNaN(price)) return;
 
-    // Show confirmation modal
-    currentProduct = { name, price };
+    currentProduct = { name, price, imgSrc };
     modalMessage.textContent = `Do you want to purchase "${name}" for $${price}?`;
     modal.classList.add("active");
   });
@@ -64,8 +63,11 @@ document.addEventListener("DOMContentLoaded", () => {
       total += item.price;
       cartItems.innerHTML += `
         <div class="cart-item">
-          <span>${item.name}</span>
-          <span>$${item.price}</span>
+          <img src="${item.imgSrc}" alt="${item.name}" class="cart-item-img">
+          <div class="cart-item-details">
+            <span>${item.name}</span>
+            <span>$${item.price}</span>
+          </div>
           <button class="remove-item" data-index="${index}">×</button>
         </div>
       `;
@@ -117,5 +119,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-
 });
