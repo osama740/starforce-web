@@ -386,18 +386,11 @@ body {
 }
 /* ================= MOBILE PADDING & SCROLL FIX ================= */
 @media (max-width: 768px) {
-  body, .home, .contact, .reviews, .products-grid {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
 
   .product-card {
     padding: 10px;
   }
 
-  .navbar {
-    padding: 10px 20px;
-  }
 
   /* Ensure scrollable areas work well */
   body, html {
